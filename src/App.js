@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { observer } from "mobx-react";
+import "./App.css";
+import PageB from "./page/pageB";
+import PageA from "./page/pageA";
+import Store from "./store";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+@observer
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <ul className="menu-list">
+          <li className="menu"
+            onClick={() => {
+              Store.setTab('A');
+            }}
+          > demo1</li>
+          <li className="menu"
+            onClick={() => {
+              Store.setTab('B');
+            }}
+          > demo2 </li>
+        </ul>
+        <div className="content">
+
+          {Store.tab === "A" ? <PageA rootStore={Store} /> : <PageB />}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

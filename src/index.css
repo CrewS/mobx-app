@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.menu{
+  font-size: 16px;
+  padding: 5px;
+  margin-right: 5px;
+}
+.menu-list{
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+.menu-list li{
+  cursor: pointer;
+}
+.menu-list li:hover{
+  /* cursor: pointer; */
+  color: #de0019;
+}
+.content{
+  padding-top: 300px;
+}
+.content-box {
+  width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+#incomeLabel{
+  margin: 0 10px;
+}
